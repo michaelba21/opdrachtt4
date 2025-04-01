@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekupe Digital Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /*////////////////////////
+        Table of Contents
+        1. Global Styles
+        2. Typography
+        3. Layout
+            3.1 Reusables
+            3.2 Other
+        4. Areas
+            4.1 Header
+            4.2 Introduction
+            4.3 Projects
+            4.4 Services
+            4.5 Contact
+            4.6 Footer
+        5. Media Queries
+        ////////////////////////*/
+
+        /* ------------------------------- 1. Global Styles -------------------------------- */
+        :root {
+            --purple: #5722CD;
+            --blue: #4845E4;
+            --pink: #ED4385;
+            --black: #0C0C0C;
+            --light-purple: #F2F0FF;
+            --light-gray: #F3F6F9;
+            --gray: #7A7A7A;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* ------------------------------- 2. Typography ----------------------------------- */
+        h1, h2, h3, h4 {
+            font-family: 'Roboto', serif;
+            font-weight: 700;
+        }
+
+        /* ------------------------------- 3. Layout --------------------------------------- */
+        .container {
+            font-family: 'Roboto', serif;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        /* ------------------------------- 4. Areas ---------------------------------------- */
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: white;
+            padding: 2rem 0 4rem 0;
+            position: block;
+            font-family: 'Merriweather';
+        }
+
+        .header-navigation ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            padding: 0 5%;
+        }
+
+        .header-navigation ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .header-navigation ul li a:hover {
+            opacity: 0.8;
+        }
+
+        .scroll-icon {
+            position: relative;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0 10px 0;
+            padding:50px 0 0px 0;
+        }
+
+        .scroll-icon img {
+            width: 100%;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .container h1 {
+            font-size: 3rem;
+            margin: 1rem 0;
+            max-width: 800px;
+        }
+
+        .container h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 0px;
+            color: var(--blue);
+            width: 700px;
+        }
+
+        .container h3 {
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+            color: var(--black);
+        }
+        .card h3{
+            color:var(--blue);
+        }
+
+        .container p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .section2p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 0px 0px 0px;
+            color: var(--black);
+            text-decoration: none;
+        }
+        a:link {
+            text-decoration: none;
+            color:var(--blue);
+        }
+
+        .container button {
+            background-color: var(--pink);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 20px 0;
+        }
+
+        .container button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* hello element with crooked pseudo-element */
+        .hello {
+            width: 100%;
+            height: 80px;
+            background-color: var(--blue);
+            border-radius: 10px;
+            position: relative;
+            margin: -30px 0 40px 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            transform: rotate(1deg) scaleX(1.02);
+        }
+
+        /* Optional shadow effect */
+        .hello::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 50%);
+            border-radius: inherit;
+            z-index: -1;
+        }
+
+        .line-after-text {
+            position: relative;
+            padding-right: 40px;
+            display: inline-block;
+            color: var(--blue);
+        }
+
+        .line-after-text::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 2px;
+            background-color:var(--blue);
+            transition: all 0.3s ease;
+            margin: 0 2px 0 9px;
+        }
+
+        /* Hover effects */
+        .line-after-text:hover::after {
+            width: 50px;
+            background-color: var(--pink);
+            height: 3px;
+        }
+
+        /* Projects styles */
+        .projects {
+            background-color: var(--light-gray);
+            padding: 4rem 0;
+        }
+
+        .project {
+            margin-bottom: 4rem;
+        }
+
+        .projectmix {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .project-content {
+            flex: 1;
+            max-width: 500px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .project-scroll-icon {
+            width: 70px;
+            height: 20px;
+            margin: 1rem 0;
+        }
+
+        .project-scroll-icon img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-image1,
+        .project-image2,
+        .project-image3 {
+            flex: 1;
+        }
+
+        .project-image1 img,
+        .project-image2 img,
+        .project-image3 img {
+            width: 1000px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        }
+
+        /* Alternate layout for even projects */
+        .project:nth-child(even) .projectmix {
+            flex-direction: row-reverse;
+        }
+
+        /* Services styles */
+        .services {
+            padding: 4rem 0;
+        }
+
+        .services .container h2 {
+            margin-bottom: 3rem;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            flex: 1 1 300px;
+            max-width: 400px;
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            border:1px solid var(--blue);
+        }
+
+        .card .imgg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card .imgg img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        /* Contact styles */
+        .contact {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            padding: 4rem 0;
+            color: white;
+        }
+        .form-group{
+            display:flex;
+            flex-direction:column;
+        }
+        .form3{
+            width:90%;
+            max-width:1200px;
+            display:flex;
+            flex-direction:column;
+            align-items: center;
+            text-align:left;
+        }
+        #name{
+            width:500px;
+            height:40px;
+            border-radius: 2px;
+            border:none;
+            padding: 1px 11px;
+            font-family: 'Roboto', serif;
+        }
+        #Email{
+            width:500px;
+            height:40px;
+            border-radius: 2px;
+            border:none;
+            padding: 1px 11px;
+            font-family: 'Roboto', serif;
+        }
+        #message{
+            width:500px;
+            height:170px;
+            border-radius: 2px;
+            border:none;
+            padding: 13px 11px;
+            font-family: 'Roboto', serif;
+        }
+        .btn{
+            background-color: var(--pink);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 20px 0;
+            width:150px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: var(--black);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        /* ------------------------------- 5. Media Queries -------------------------------- */
+        @media (max-width: 768px) {
+            .container h1 {
+                font-size: 2rem;
+            }
+
+            .container h2 {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 1.2rem;
+            }
+
+            .header-navigation ul {
+                justify-content: center;
+                padding: 0;
+                flex-wrap: wrap;
+            }
+
+            .projectmix {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .project:nth-child(even) .projectmix {
+                flex-direction: column;
+            }
+
+            .project-content {
+                text-align: center;
+                align-items: center;
+            }
+
+            /* Keep original image sizes but handle overflow */
+            .project-image1,
+            .project-image2,
+            .project-image3 {
+                width: 100%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+            }
+
+            .project-image1 img,
+            .project-image2 img,
+            .project-image3 img {
+                width: 100%;
+                max-width: 1000px;
+                height: auto;
+                max-height: 600px;
+                object-fit: contain;
+            }
+
+            .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            #name,
+            #Email,
+            #message {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .hello {
+                height: 60px;
+                margin-top: -15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container h1 {
+                font-size: 1.8rem;
+            }
+
+            .container p {
+                font-size: 1rem;
+            }
+
+            .header-navigation ul {
+                gap: 10px;
+            }
+
+            .scroll-icon {
+                margin: 30px 0 10px 0;
+            }
+
+            .hello {
+                height: 50px;
+                margin-top: -10px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 150px;
+            }
+
+            #name,
+            #Email,
+            #message {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="header-navigation">
+        <ul>
+            <li><a href="#Case Studies">Case Studies</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Your website is an investment in the success of your business.</h1>
+        <p>We are here to help you succeed.</p>
+        <button type="button">Let's work together</button>
+    </div>
+    <div class="scroll-icon">
+        <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/squiggle_line.svg" alt="Scroll indicator">
+    </div>
+</header>
+<div class="hello"></div>
+
+<section class="intro">
+    <div class="container">
+        <h2>Rekupe is a digital agency in Los Angeles.</h2>
+        <h2>We use strategic UX, SEO optimization and beautiful visual designs to help your business grow.</h2>
+        <h2>We see every project as a fresh opportunity, pushing ourselves to create new digital experiences.</h2>
+        <div class="section2p"><p>Have a question?<a href=""> Click here </a>to contact us!</p></div>
+    </div>
+</section>
+
+<section class="projects" id="work">
+    <div class="container">
+        <article class="project">
+            <div class="projectmix">
+                <div class="project-content">
+                    <h3>Rolling Stone</h3>
+                    <div class="project-scroll-icon">
+                        <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/squiggle_line.svg" alt="Scroll indicator">
+                    </div>
+                    <p>You know Rolling Stone. It's the definitive voice in music, politics and culture. It's a global icon.</p>
+                    <div class="line-after-text">View project</div>
+                </div>
+                <div class="project-image1">
+                    <img src="https://github.com/hogeschoolnovi/frontend-html-css-concept-opdracht/blob/master/assets/work-image-01.jpeg?raw=true" alt="Rolling Stone project">
+                </div>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="projectmix">
+                <div class="project-content">
+                    <h3>Variety</h3>
+                    <div class="project-scroll-icon">
+                        <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/squiggle_line.svg" alt="Scroll indicator">
+                    </div>
+                    <p>Variety is an industry leader for breaking entertainment news, reviews and box office results with archive of content dating back to 1905.</p>
+                    <div class="line-after-text">View project</div>
+                </div>
+                <div class="project-image2">
+                    <img src="https://github.com/hogeschoolnovi/frontend-html-css-concept-opdracht/blob/master/assets/work-image-02.jpeg?raw=true" alt="Variety project">
+                </div>
+            </div>
+        </article>
+
+        <article class="project">
+            <div class="projectmix">
+                <div class="project-content">
+                    <h3>Worth</h3>
+                    <div class="project-scroll-icon">
+                        <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/squiggle_line.svg" alt="Scroll indicator">
+                    </div>
+                    <p>A global media platform connecting a community that embraces worth beyond wealth.</p>
+                    <div class="line-after-text">View project</div>
+                </div>
+                <div class="project-image3">
+                    <img src="https://github.com/hogeschoolnovi/frontend-html-css-concept-opdracht/blob/master/assets/work-image-03.jpeg?raw=true" alt="Worth project">
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="container">
+        <h2>Services</h2>
+        <div class="flex">
+            <div class="card">
+                <div class="imgg">
+                    <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/icon_web-design.svg" alt="Web Design">
+                </div>
+                <h3>Web Design</h3>
+                <p>Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and products that improve on their bottom line.</p>
+            </div>
+
+            <div class="card">
+                <div class="imgg">
+                    <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/icon_web-development.svg" alt="Web Development">
+                </div>
+                <h3>Web Development</h3>
+                <p>Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already have a design but need it developed? We're here to help!</p>
+            </div>
+
+            <div class="card">
+                <div class="imgg">
+                    <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/icon_ux.svg" alt="User Experience">
+                </div>
+                <h3>User Experience</h3>
+                <p>In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product and can quickly eliminate potential risks – saving you time and money.</p>
+            </div>
+
+            <div class="card">
+                <div class="imgg">
+                    <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/icon_graphic-design.svg" alt="Logo Design">
+                </div>
+                <h3>Logo Design + Branding</h3>
+                <p>Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of view. We will work with you to understand your vision and help create a unique brand identity and style guide for your company.</p>
+            </div>
+
+            <div class="card">
+                <div class="imgg">
+                    <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/icon_seo.svg" alt="SEO">
+                </div>
+                <h3>SEO</h3>
+                <p>Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don't worry about constantly playing catch-up. We will make sure your website it optimized, providing you the best opportunities for organic search exposure.</p>
+            </div>
+
+            <div class="card">
+                <div class="imgg">
+                    <img src="https://raw.githubusercontent.com/hogeschoolnovi/frontend-html-css-concept-opdracht/ea1c1251ee3ab7ec9420a3a6c6521bcb981c943e/assets/icon_copywriting.svg" alt="Copy Writing">
+                </div>
+                <h3>Copy Writing</h3>
+                <p>Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand bible and ensure your messaging is focused and targeted.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h1>Let's work together</h1>
+        <p>Have a question? Need a quote? Let us know!</p>
+        <form class="form3">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="Email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Message"></textarea>
+            </div>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Business website opdracht © NOVI Hogeschool 2022.</p>
+    </div>
+</footer>
+</body>
+</html>
